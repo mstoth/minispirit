@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#cassie
+{
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	height: 450px;
+	margin-top: 5%;
+	margin-bottom: auto;
+} 
+
+img.map, map area
+{
+outline: none;
+}
+
+body
+{
+	background-color: #999;
+}
+
+h1 {
+    text-align: center;
+}
+a:link{
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	text-decoration: none;
+}

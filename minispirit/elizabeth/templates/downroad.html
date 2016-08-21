@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title> Logotherapy </title>
+<link rel="stylesheet" href="cassie.css" />
+<script>
+
+// Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+// Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+
+//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+//** Call: uniquevar.playclip() to play sound
+
+var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+	"mp3": "audio/mpeg",
+	"mp4": "audio/mp4",
+	"ogg": "audio/ogg",
+	"wav": "audio/wav"
+}
+
+function createsoundbite(sound){
+	var html5audio=document.createElement('audio')
+	if (html5audio.canPlayType){ //check support for HTML5 audio
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+	}
+	else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+	}
+}
+
+//Initialize two sound clips with 1 fallback file each:
+
+var mouseoversound=createsoundbite("sitephotos/walking.mp3")
+var clicksound=createsoundbite("sitephotos/walking.mp3")
+
+</script>
+</head>
+
+<body>
+	
+
+<img class="map" img src="sitephotos/odownroad.jpg" width="600" height="450" usemap="#firstmap"onmouseover="mouseoversound.playclip()"/>
+<map name="firstmap">
+
+  <area shape="poly" coords="0,277,58,256,58,116,84,119,82,114,89,113,62,33,56,-1,0,0" href="barn2.html">
+  <area shape="poly" coords="59,256,0,276,2,385,0,455,1175,519,479,279,365,306,284,302,210,298,241,278,279,257,307,230,321,208,316,192,310,185,286,178,258,194,169,192,169,171,134,177,133,190,79,185,73,188,58,185" href="barn4.html">
+  <area shape="poly" coords="303,180,307,185,317,193,323,209,306,230,279,257,208,298,233,298,274,302,303,305,366,308,436,293,484,280,440,250,397,218,384,208,348,186" href="oldmachines.html">
+  <area shape="poly" coords="59,115,78,120,79,181,73,186,59,184" href="barn3.html">
+</map>
+		
+	
+
+	
+
+</body> 
+</html>

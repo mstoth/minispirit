@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+	<title> Logotherapy </title>
+<link rel="stylesheet" href="cassie.css" />
+<script>
+
+// Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+// Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+
+//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+//** Call: uniquevar.playclip() to play sound
+
+var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+	"mp3": "audio/mpeg",
+	"mp4": "audio/mp4",
+	"ogg": "audio/ogg",
+	"wav": "audio/wav"
+}
+
+function createsoundbite(sound){
+	var html5audio=document.createElement('audio')
+	if (html5audio.canPlayType){ //check support for HTML5 audio
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+	}
+	else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+	}
+}
+
+//Initialize two sound clips with 1 fallback file each:
+
+var mouseoversound=createsoundbite("sitephotos/Walking4.mp4")
+var clicksound=createsoundbite("sitephotos/Walking4.mp4")
+
+</script>
+</head>
+
+<body>
+	
+
+<img class="map" img src="sitephotos/othroughleaves.jpg" width="600" height="450" usemap="#firstmap"onmouseover="mouseoversound.playclip()"/>
+<map name="firstmap">
+
+ 
+  <area shape="poly" coords="253,239,348,241,395,279,390,287,392,348,251,347" href="barn2.html">
+  <area shape="poly" coords="162,194,194,173,238,187,254,211,251,348,196,350,186,322,171,283,169,273,152,257,140,257,145,202" href="redthing.html">
+</map>
+		
+	
+
+	
+
+</body> 
+</html>

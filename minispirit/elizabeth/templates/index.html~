@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Spirit</title>
+
+<meta name="keywords" content="Elizabeth Graeme Fergusson, The Deserted Wife, Hatboro Horsham, The Strawbridge House"/>
+<meta name="description" content="Spirit explores veiled traces of Elizabeth Graeme Ferguson, a poet of Hatboro Horsham, Pennsylvania in the early 18th century."/>
+<meta name="author" content="Casie Ropski"/>
+
+<link rel="stylesheet" href="cassie.css" />
+<style>
+p.small {
+    line-height: 1%;
+}
+</style>
+
+</head>
+
+<body>
+<audio src="elizabeth/sitephotos/OppressiveGloom.mp3" controls loop autoplay="true" hidden="true" volume="50%"></audio>
+<area shape="poly" coords="200,129,203,126,195,127,203,122,207,89,214,79,208,63,208,40,226,31,243,36,247,49,243,69,246,79,256,88,272,113,284,161,276,186,265,227,255,254,251,302,251,356,252,392,238,428,192,434,156,437,130,436,98,412,83,377,84,351,97,340,103,325,117,270,124,233,127,207,122,184,114,163,139,121,142,107,145,87,145,71,160,62,180,73,186,88,182,112,183,133,196,135" onclick="window.open('elizabeth/start.html', 'title', 'toolbar=no,resizable=no,scrollbars=yes,width=600,height=600,left=0,t op=0');" title="new window" class="title" href="" />
+
+<p class="small">
+<font color="#FFFFFF" size="9" face="Didot"><h1><em><strong><a href="javascript:location='index.html';window.open('elizabeth/start.html', 'characters', 'height=650, width=650,scrollbars=yes')">Spirit</a></strong><br></em></h1></font>
+<font color="#FFFFFF" size="1" face="Didot"><h1>Casie Ropski<br></h1></font>
+<font color="#FFFFFF" size="1" face="Didot"><h1><a href="credits.html" target="_blank">Credits</a><br></h1></font>
+<font color="#FFFFFF" size="1" face="Didot"><h1><a href="references.html" target="_blank">References</a><br></h1></font>
+</p>
+<div align="center"><img class="map" img src="phantom/sitephotos/portrait4close.png" width="338" height="450" usemap="#firstmap"/>
+  <map name="firstmap">
+
+  </map>
+</div>
+</body>
+</html>

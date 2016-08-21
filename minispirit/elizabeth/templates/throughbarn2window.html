@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+	<title> Logotherapy </title>
+<link rel="stylesheet" href="cassie.css" />
+<script>
+
+// Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+// Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+
+//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+//** Call: uniquevar.playclip() to play sound
+
+var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+	"mp3": "audio/mpeg",
+	"mp4": "audio/mp4",
+	"ogg": "audio/ogg",
+	"wav": "audio/wav"
+}
+
+function createsoundbite(sound){
+	var html5audio=document.createElement('audio')
+	if (html5audio.canPlayType){ //check support for HTML5 audio
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+	}
+	else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+	}
+}
+
+//Initialize two sound clips with 1 fallback file each:
+
+var mouseoversound=createsoundbite("sitephotos/walking.mp3")
+var clicksound=createsoundbite("sitephotos/walking.mp3")
+
+</script>
+</head>
+
+<body>
+	
+
+<img class="map" img src="sitephotos/othroughbarn2window.jpg" width="600" height="450" usemap="#firstmap"onmouseover="mouseoversound.playclip()"/>
+<map name="firstmap">
+  <area shape="poly" coords="336,201,339,146,219,148,220,224,222,377,227,374,243,379,270,374,288,375,314,378,339,375" href="barn4windows.html">
+ 	  <area shape="poly" coords="515,-5,529,202,535,257,532,367,439,366,368,365,309,371,264,369,208,371,86,364,103,60,103,-1,-3,-3,-2,212,-3,448,595,445,593,-4" href="barn3.html">
+</map>
+		
+	
+
+	
+
+</body> 
+</html>

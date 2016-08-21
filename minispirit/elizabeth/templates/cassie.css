@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#cassie
+{
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	height: 450px;
+	margin-top: 5%;
+	margin-bottom: auto;
+} 
+
+
+img.map, map area {
+outline: none;
+}
+body
+{
+	background-color: #CCC;
+}

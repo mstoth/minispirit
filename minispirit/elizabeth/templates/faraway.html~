@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title> Bewildering Guides for a Deserted Wife</title>
+<link rel="stylesheet" href="cassie.css" />
+</head>
+
+<body>
+	
+
+ <img class="map" img src="sitephotos/ofaraway.jpg" width="600" height="450" usemap="#firstmap">
+ <map name="firstmap">
+  <area shape="rect" coords="1,1,599,450" href="crossroads.html">
+</map>
+		
+	
+
+	
+
+</body> 
+</html>

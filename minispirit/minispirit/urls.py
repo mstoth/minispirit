@@ -19,7 +19,7 @@ from django.contrib import admin
 from elizabeth import views
 
 urlpatterns = [
-    url(r'^$', views.home_page,name='home'),
+    url(r'^elizabeth/.*$', views.elizabeth),
     url(r'^admin/', include(admin.site.urls)),
 
 ]
