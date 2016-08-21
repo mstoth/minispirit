@@ -101,6 +101,7 @@ class NewVisitorTest(unittest.TestCase):
 
 		# test for the footsteps
 		s = self.browser.find_element_by_tag_name('audio')
+		self.assertIn("walking",s.get_attribute('src'))
 
 		# wait for 8 seconds
 		time.sleep(8)
